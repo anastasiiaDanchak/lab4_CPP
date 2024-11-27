@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.lab4.Controller">
+    <TextField fx:id="urlField" promptText="Enter URL" />
+    <Button text="Add URL" onAction="#addUrl" />
+    <Button fx:id="startButton" text="Start Scraping" onAction="#startScraping" />
+    <Button text="Stop Service" onAction="#stopService" />
+    <TableView fx:id="resultTable" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="urlColumn" text="URL" prefWidth="200" />
+            <TableColumn fx:id="statusColumn" text="Status" prefWidth="100" />
+            <TableColumn fx:id="durationColumn" text="Duration (ms)" prefWidth="100" />
+            <TableColumn fx:id="dataSizeColumn" text="Data Size (chars)" prefWidth="100" />
+        </columns>
+    </TableView>
+    <ScrollPane fitToWidth="true" prefHeight="300">
+        <VBox fx:id="threadPanelContainer" spacing="5" />
+    </ScrollPane>
+    <Label fx:id="totalTimeLabel" text="Total Execution Time: 0 ms" />
+</VBox>
